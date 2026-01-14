@@ -11,15 +11,16 @@ int main()
     int choice;
 	std::cin >> choice;
 
-    switch (choice) 
+    do 
     {
+        switch (choice)
+        {
         case 0:
             std::cout << "Closing program...\n" << std::endl;
             return 0;
+        }
     }
-    
-
-    
+	while (choice != 0);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
