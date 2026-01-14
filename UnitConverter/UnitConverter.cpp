@@ -2,12 +2,14 @@
 //
 
 #include <iostream>
+#include "TemperatureFunctions.h"
+#include "TemperatureHandler.cpp"
 
 int main()
 {
-	bool running = true;
     std::cout << "0. Quit Program\n" << std::endl;
     std::cout << "1. Temperature\n" << std::endl;
+
     int choice;
 	std::cin >> choice;
 
@@ -18,7 +20,12 @@ int main()
         case 0:
             std::cout << "Closing program...\n" << std::endl;
             return 0;
+
+        case 1:
+            handleTemperatureConversion();
+            break;
         }
+
     }
 	while (choice != 0);
 }

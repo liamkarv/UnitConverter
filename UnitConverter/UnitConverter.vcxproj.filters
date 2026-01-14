@@ -18,6 +18,9 @@
     <ClCompile Include="UnitConverter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TemperatureFunctions.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="TemperatureHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
