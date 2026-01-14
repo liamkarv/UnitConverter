@@ -2,7 +2,6 @@
 //
 
 #include <iostream>
-#include "TemperatureFunctions.h"
 #include "TemperatureHandler.cpp"
 
 int main()
@@ -22,7 +21,7 @@ int main()
             return 0;
 
         case 1:
-            handleTemperatureConversion();
+            displayTemperatureMenu();
             break;
         }
 
