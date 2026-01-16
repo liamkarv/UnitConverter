@@ -1,7 +1,7 @@
 #include <iostream>
 #include <map>
 #include <functional>
-#include "TemperatureFunctions.h"
+#include "TemperatureFunctions.hpp"
 
 inline double calculateConversion(char fromUnit, char toUnit, double convNumber)
 {
