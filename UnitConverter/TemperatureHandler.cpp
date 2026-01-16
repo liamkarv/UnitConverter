@@ -5,6 +5,7 @@
 
 inline double calculateConversion(char fromUnit, char toUnit, double convNumber)
 {
+    double result;
     std::map < std::pair<char, char>, std::function<double(double)>> myMap =
     {
         {{'C', 'F'}, convertCtoF},
@@ -15,7 +16,6 @@ inline double calculateConversion(char fromUnit, char toUnit, double convNumber)
         {{'K', 'F'}, convertKtoF},
     };
 
-    double result;
     std::cout << "Calculating..." << std::endl;
     
 }

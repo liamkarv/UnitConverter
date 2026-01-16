@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="TemperatureFunctions.h" />
+    <ClCompile Include="TemperatureFunctions.hpp" />
     <ClCompile Include="TemperatureHandler.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

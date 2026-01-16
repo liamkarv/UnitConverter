@@ -21,7 +21,7 @@
     <ClCompile Include="TemperatureHandler.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="TemperatureFunctions.h">
+    <ClCompile Include="TemperatureFunctions.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
