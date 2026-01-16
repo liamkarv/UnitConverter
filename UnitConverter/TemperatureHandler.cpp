@@ -1,31 +1,23 @@
-#include <iostream>;
-#include <unordered_map>;
-#include "TemperatureFunctions.h";
-
-using namespace std;
+#include <iostream>
+#include <map>
+#include <functional>
+#include "TemperatureFunctions.h"
 
 inline double calculateConversion(char fromUnit, char toUnit, double convNumber)
 {
+    std::map < std::pair<char, char>, std::function<double(double)>> myMap =
+    {
+        {{'C', 'F'}, convertCtoF},
+        {{'C', 'K'}, convertCtoK},
+        {{'F', 'C'}, convertFtoC},
+        {{'F', 'K'}, convertFtoK},
+        {{'K', 'C'}, convertKtoC},
+        {{'K', 'F'}, convertKtoF},
+    };
 
-    unordered_map<std::pair<char,char>, std::function>;
     double result;
     std::cout << "Calculating..." << std::endl;
-    //switch (fromUnit )
-    //{
-    //    case ('C'):
-    //        switch()
-    //        case ('F'):
-    //            result = convertCtoF(convNumber);
-    //            break;
-
-    //    case ('C' && 'K'):
-    //        result = convertCtoK(convNumber);
-    //        break;
-
-    //    default:
-    //        0;
-    //}
-    //return result;
+    
 }
 
 
