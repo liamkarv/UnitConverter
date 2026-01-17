@@ -33,7 +33,7 @@ inline double calculateConversion(TempUnit fromUnit, TempUnit toUnit, double con
     };
 
     std::cout << "Calculating..." << std::endl;
-    return tempFuncs.find({fromUnit, toUnit})->second(convNumber); // Something to do with this find() function
+    return tempFuncs.find({fromUnit, toUnit})->second(convNumber); // Something to do with this find() function is causing errors
 }
 
 inline void displayTemperatureMenu()
@@ -51,7 +51,7 @@ inline void displayTemperatureMenu()
     std::cout << "Enter a number: ";
     std::cin >> convNumber;
 
-    std::cout << calculateConversion(convertInput(fromUnit), convertInput(toUnit), convNumber) + std::toupper(toUnit) << std::endl; // I know that I am calling convertInput twice on toUnit...
+    std::cout << calculateConversion(convertInput(fromUnit), convertInput(toUnit), convNumber) << (char)std::toupper(toUnit) << std::endl << "\n";
 
     return;
 }
