@@ -3,33 +3,33 @@
 #include <functional>
 #include "TemperatureFunctions.hpp"
 
-enum TemperatureUnit {C, F, K};
+enum TempUnit {C, F, K};
 
-inline TemperatureUnit convertInput(char input)
+inline TempUnit convertInput(char input)
 {
     switch(std::toupper(input))
     { 
         case 'C':
-            return TemperatureUnit::C;
+            return TempUnit::C;
         case 'F':
-            return TemperatureUnit::F;
+            return TempUnit::F;
         case 'K':
-            return TemperatureUnit::K;
+            return TempUnit::K;
         default:
             throw std::invalid_argument("Invalid temperature unit, select either C, F or K");
     }
 }
 
-inline double calculateConversion(TemperatureUnit fromUnit, TemperatureUnit toUnit, double convNumber)
+inline double calculateConversion(TempUnit fromUnit, TempUnit toUnit, double convNumber)
 {
-    const static std::map<std::pair<TemperatureUnit, TemperatureUnit>, std::function<double(double) >> tempFuncs =
+    const static std::map<std::pair<TempUnit, TempUnit>, std::function<double(double) >> tempFuncs =
     {
-        {{TemperatureUnit::C, TemperatureUnit::F}, convertCtoF},
-        {{TemperatureUnit::C, TemperatureUnit::K}, convertCtoK},
-        {{TemperatureUnit::F, TemperatureUnit::C}, convertFtoC},
-        {{TemperatureUnit::F, TemperatureUnit::K}, convertFtoK},
-        {{TemperatureUnit::K, TemperatureUnit::C}, convertKtoC},
-        {{TemperatureUnit::K, TemperatureUnit::F}, convertKtoF},
+        {{TempUnit::C, TempUnit::F}, convertCtoF},
+        {{TempUnit::C, TempUnit::K}, convertCtoK},
+        {{TempUnit::F, TempUnit::C}, convertFtoC},
+        {{TempUnit::F, TempUnit::K}, convertFtoK},
+        {{TempUnit::K, TempUnit::C}, convertKtoC},
+        {{TempUnit::K, TempUnit::F}, convertKtoF},
     };
 
     std::cout << "Calculating..." << std::endl;
@@ -41,17 +41,17 @@ inline void displayTemperatureMenu()
     char fromUnit;
     char toUnit;
     double convNumber;
-    std::cout << "Select unit to convert FROM " << std::endl;
+    std::cout << "Valid temperature units are C, F, K" << std::endl;
+    std::cout << "Select unit to convert FROM: ";
     std::cin >> fromUnit;
 
-    std::cout << "Select unit to convert TO " << std::endl;
+    std::cout << "Select unit to convert TO: ";
     std::cin >> toUnit;
 
-    std::cout << "Enter a number " << std::endl;
+    std::cout << "Enter a number: ";
     std::cin >> convNumber;
 
-    std::cout << calculateConversion(convertInput(fromUnit), convertInput(toUnit), convNumber) << std::endl; // I know that I am calling convertInput twice on toUnit...
+    std::cout << calculateConversion(convertInput(fromUnit), convertInput(toUnit), convNumber) + std::toupper(toUnit) << std::endl; // I know that I am calling convertInput twice on toUnit...
 
     return;
 }
-

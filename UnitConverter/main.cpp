@@ -6,7 +6,7 @@ int main()
     int choice;
     do 
     {
-        std::cout << "0. Quit Program\n" << std::endl;
+        std::cout << "0. Quit Program\n";
         std::cout << "1. Temperature\n" << std::endl;
 
         std::cin >> choice;
